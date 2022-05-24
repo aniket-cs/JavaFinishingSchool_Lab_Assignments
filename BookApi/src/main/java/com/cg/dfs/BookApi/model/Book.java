@@ -1,7 +1,5 @@
 package com.cg.dfs.BookApi.model;
 import lombok.*;
-import net.bytebuddy.implementation.bind.annotation.Empty;
-
 import javax.validation.constraints.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +24,9 @@ public class Book {
     private String bookName;
 
     @NotNull(message = "You should provide proper book cost")
+    @Min(value = 1, message = "Minimum book cost should be 1.0 INR")
     private Double bookCost;
+
 
 
 }
